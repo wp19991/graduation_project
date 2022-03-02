@@ -130,5 +130,5 @@ dmypy.json
 
 # idea
 .idea/
-/bysj_client/.idea/
-/bysj_client/qt-designer.bat
+/pyqt5_client/.idea/
+/pyqt5_client/qt-designer.bat
