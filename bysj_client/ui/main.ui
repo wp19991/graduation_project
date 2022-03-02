@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>771</width>
+    <height>667</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>语音增强-客户端</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../apprcc.qrc">
+    <normaloff>:/icon/resources/icon/探测声音.ico</normaloff>:/icon/resources/icon/探测声音.ico</iconset>
+  </property>
+  <property name="toolTip">
+   <string>打开一个项目文件夹</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout_2"/>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>771</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>文件</string>
+    </property>
+    <addaction name="action_open_project"/>
+    <addaction name="action_close_project"/>
+    <addaction name="separator"/>
+    <addaction name="action_save"/>
+    <addaction name="separator"/>
+    <addaction name="action_close"/>
+   </widget>
+   <widget class="QMenu" name="menu_2">
+    <property name="title">
+     <string>帮助</string>
+    </property>
+    <addaction name="action_about"/>
+    <addaction name="action_help"/>
+   </widget>
+   <addaction name="menu"/>
+   <addaction name="menu_2"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="action_open_project">
+   <property name="icon">
+    <iconset resource="../apprcc.qrc">
+     <normaloff>:/icon/resources/icon/文件夹 .ico</normaloff>:/icon/resources/icon/文件夹 .ico</iconset>
+   </property>
+   <property name="text">
+    <string>打开项目</string>
+   </property>
+   <property name="whatsThis">
+    <string/>
+   </property>
+  </action>
+  <action name="action_close_project">
+   <property name="icon">
+    <iconset resource="../apprcc.qrc">
+     <normaloff>:/icon/resources/icon/关闭文件夹.ico</normaloff>:/icon/resources/icon/关闭文件夹.ico</iconset>
+   </property>
+   <property name="text">
+    <string>关闭项目</string>
+   </property>
+  </action>
+  <action name="action_close">
+   <property name="icon">
+    <iconset resource="../apprcc.qrc">
+     <normaloff>:/icon/resources/icon/关闭.ico</normaloff>:/icon/resources/icon/关闭.ico</iconset>
+   </property>
+   <property name="text">
+    <string>关闭</string>
+   </property>
+  </action>
+  <action name="action_save">
+   <property name="icon">
+    <iconset resource="../apprcc.qrc">
+     <normaloff>:/icon/resources/icon/保存.ico</normaloff>:/icon/resources/icon/保存.ico</iconset>
+   </property>
+   <property name="text">
+    <string>保存</string>
+   </property>
+  </action>
+  <action name="action_about">
+   <property name="icon">
+    <iconset resource="../apprcc.qrc">
+     <normaloff>:/icon/resources/icon/信息.ico</normaloff>:/icon/resources/icon/信息.ico</iconset>
+   </property>
+   <property name="text">
+    <string>关于</string>
+   </property>
+  </action>
+  <action name="action_help">
+   <property name="icon">
+    <iconset resource="../apprcc.qrc">
+     <normaloff>:/icon/resources/icon/帮助.ico</normaloff>:/icon/resources/icon/帮助.ico</iconset>
+   </property>
+   <property name="text">
+    <string>帮助</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="../apprcc.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>action_close</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>385</x>
+     <y>333</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

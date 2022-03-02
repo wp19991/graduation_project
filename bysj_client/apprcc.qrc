@@ -1,0 +1,26 @@
+<RCC>
+  <qresource prefix="icon">
+    <file>resources/icon/关闭.ico</file>
+    <file>resources/icon/帮助.ico</file>
+    <file>resources/icon/保存.ico</file>
+    <file>resources/icon/编辑.ico</file>
+    <file>resources/icon/饼图.ico</file>
+    <file>resources/icon/错误.ico</file>
+    <file>resources/icon/代码文件.ico</file>
+    <file>resources/icon/关闭文件夹.ico</file>
+    <file>resources/icon/曲线图.ico</file>
+    <file>resources/icon/设置.ico</file>
+    <file>resources/icon/首页.ico</file>
+    <file>resources/icon/探测声音.ico</file>
+    <file>resources/icon/提示.ico</file>
+    <file>resources/icon/图书.ico</file>
+    <file>resources/icon/未选中.ico</file>
+    <file>resources/icon/文件夹 .ico</file>
+    <file>resources/icon/文件夹.ico</file>
+    <file>resources/icon/信息.ico</file>
+    <file>resources/icon/选中.ico</file>
+    <file>resources/icon/扬声器.ico</file>
+    <file>resources/icon/语音.ico</file>
+    <file>resources/icon/正确.ico</file>
+  </qresource>
+</RCC>
