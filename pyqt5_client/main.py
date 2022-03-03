@@ -19,4 +19,4 @@ if __name__ == '__main__':
 # 转换ui文件
 # python -m PyQt5.uic.pyuic ui/main.ui -o ui/main.py
 # 打包成exe
-# pyinstaller -F -w -y -i ./ui/icon/images/app.ico -n pyqt5_example main.py
+# pyinstaller -F -w -y -i ./resources/icon/探测声音.ico -n 语音增强客户端 main.py

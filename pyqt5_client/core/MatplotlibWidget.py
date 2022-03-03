@@ -1,3 +1,4 @@
+import os.path
 import sys
 import wave
 
@@ -136,13 +137,13 @@ class MatplotlibWidget(QWidget):
                 self.rt_data = self.rt_data * self.window  # 这样做的目的是将曲线的两端固定，以免出现曲线整体发生波动
             ad_rdy_ev.clear()
 
-    def endAudio(self, save_path=r"C:\Users\wp\Desktop\graduation_project\pyqt5_client\a.wav"):
+    def endAudio(self, save_path=os.getcwd()):
         # 停止获取音频信息,并保存
         self.stream.stop_stream()
         self.stream.close()
         self.p.terminate()
 
-        wf = wave.open(save_path, 'wb')
+        wf = wave.open(os.path.join(save_path, "aaa.wav"), 'wb')
         wf.setnchannels(CHANNELS)
         wf.setsampwidth(self.p.get_sample_size(pyaudio.paInt16))
         wf.setframerate(RATE)
@@ -154,5 +155,3 @@ class MatplotlibWidget(QWidget):
             self.q.get()
         # 重新初始化变量
         self.init_value()
-
-
