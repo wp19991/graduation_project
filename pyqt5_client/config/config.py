@@ -37,8 +37,9 @@ SSH_PASSWORD: str = get_config("ssh", "password", default="")
 
 
 def __init():
-    mysql_connect(host=DB_HOST, port=DB_PORT, database=DB_DATABASE, user=DB_USERNAME, password=DB_PASSWORD)
-    ssh_connect(host=SSH_HOST, port=SSH_PORT, user=SSH_USERNAME, password=SSH_PASSWORD)
+    pass
+    #mysql_connect(host=DB_HOST, port=DB_PORT, database=DB_DATABASE, user=DB_USERNAME, password=DB_PASSWORD)
+    #ssh_connect(host=SSH_HOST, port=SSH_PORT, user=SSH_USERNAME, password=SSH_PASSWORD)
 
 
 def mysql_connect(host, port, database, user, password):

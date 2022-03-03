@@ -1,5 +1,7 @@
 <RCC>
   <qresource prefix="icon">
+    <file>resources/icon/结束.ico</file>
+    <file>resources/icon/运行.ico</file>
     <file>resources/icon/关闭.ico</file>
     <file>resources/icon/帮助.ico</file>
     <file>resources/icon/保存.ico</file>

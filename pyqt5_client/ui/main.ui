@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>771</width>
-    <height>667</height>
+    <width>772</width>
+    <height>697</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -21,14 +21,39 @@
    <string>打开一个项目文件夹</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QVBoxLayout" name="verticalLayout_2"/>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>170</y>
+      <width>93</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>PushButton</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>100</y>
+      <width>72</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>771</width>
+     <width>772</width>
      <height>26</height>
     </rect>
    </property>
@@ -50,10 +75,109 @@
     <addaction name="action_about"/>
     <addaction name="action_help"/>
    </widget>
+   <widget class="QMenu" name="menu_3">
+    <property name="title">
+     <string>窗口</string>
+    </property>
+    <addaction name="action_show_sound_recording"/>
+   </widget>
    <addaction name="menu"/>
+   <addaction name="menu_3"/>
    <addaction name="menu_2"/>
   </widget>
-  <widget class="QStatusBar" name="statusBar"/>
+  <widget class="QDockWidget" name="sound_recording_dockWidget">
+   <property name="minimumSize">
+    <size>
+     <width>400</width>
+     <height>450</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>800</width>
+     <height>900</height>
+    </size>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LeftToRight</enum>
+   </property>
+   <property name="floating">
+    <bool>true</bool>
+   </property>
+   <property name="allowedAreas">
+    <set>Qt::AllDockWidgetAreas</set>
+   </property>
+   <property name="windowTitle">
+    <string>录音窗口</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>1</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents">
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="MatplotlibWidget" name="widget" native="true"/>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QLabel" name="label">
+         <property name="text">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;设置语音文件&lt;/p&gt;&lt;p&gt;保存路径&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="sound_recording_save_path_lineEdit"/>
+       </item>
+       <item>
+        <widget class="QPushButton" name="sound_recording_save_path_pushButton">
+         <property name="text">
+          <string>打开</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../apprcc.qrc">
+           <normaloff>:/icon/resources/icon/文件夹.ico</normaloff>:/icon/resources/icon/文件夹.ico</iconset>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_3">
+       <item>
+        <widget class="QPushButton" name="sound_recording_save_path_start_pushButton">
+         <property name="text">
+          <string>开始</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../apprcc.qrc">
+           <normaloff>:/icon/resources/icon/运行.ico</normaloff>:/icon/resources/icon/运行.ico</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="sound_recording_save_path_end_pushButton">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="text">
+          <string>结束并保存文件</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../apprcc.qrc">
+           <normaloff>:/icon/resources/icon/结束.ico</normaloff>:/icon/resources/icon/结束.ico</iconset>
+         </property>
+         <property name="checkable">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
+  </widget>
   <action name="action_open_project">
    <property name="icon">
     <iconset resource="../apprcc.qrc">
@@ -111,7 +235,24 @@
     <string>帮助</string>
    </property>
   </action>
+  <action name="action_show_sound_recording">
+   <property name="icon">
+    <iconset resource="../apprcc.qrc">
+     <normaloff>:/icon/resources/icon/语音.ico</normaloff>:/icon/resources/icon/语音.ico</iconset>
+   </property>
+   <property name="text">
+    <string>显示录音窗口</string>
+   </property>
+  </action>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>MatplotlibWidget</class>
+   <extends>QWidget</extends>
+   <header>core.MatplotlibWidget</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources>
   <include location="../apprcc.qrc"/>
  </resources>

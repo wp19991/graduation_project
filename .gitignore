@@ -132,3 +132,5 @@ dmypy.json
 .idea/
 /pyqt5_client/.idea/
 /pyqt5_client/qt-designer.bat
+/pyqt5_client/a.wav
+/pyqt5_client/启动eric6.bat
