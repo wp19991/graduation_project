@@ -1,12 +1,11 @@
 import os.path
-import sys
 import wave
 
 import matplotlib
+from loguru import logger
 
 matplotlib.use("Qt5Agg")
-from PyQt5 import QtCore
-from PyQt5.QtWidgets import QApplication, QMainWindow, QVBoxLayout, QSizePolicy, QWidget
+from PyQt5.QtWidgets import QVBoxLayout, QSizePolicy, QWidget
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 import matplotlib.pyplot as plt
 import numpy as np
@@ -59,9 +58,9 @@ class MatplotlibWidget(QWidget):
         self.t = None
         self.ad_rdy_ev = None
         self.stream = None
-        self.window = None
+        self.window = signal.hanning(CHUNK * 2)
         self.ani = None
-        self.frames = []
+        self.data_list = []
         self.rt_line = line.Line2D([], [])  # 直线对象
         self.rt_x_data = np.arange(0, CHUNK * 2, 1)
         self.rt_data = np.full((CHUNK * 2,), 0)
@@ -98,13 +97,14 @@ class MatplotlibWidget(QWidget):
         # self.stream.is_active()
 
         # 正态分布数组，与音频数据做相关运算可保证波形图两端固定
-        self.window = signal.hamming(CHUNK * 2)
+        # self.window = signal.hanning(CHUNK * 2)
 
         # 初始化线程
         self.ad_rdy_ev = threading.Event()  # 线程事件变量
         self.t = threading.Thread(target=self.read_audio_thead,
                                   args=(self.q, self.stream, self.ad_rdy_ev))  # 在线程t中添加函数read_audio_thead
         self.t.start()  # 线程开始运行
+
         self.mpl.draw()
 
     # animation的更新函数
@@ -122,36 +122,46 @@ class MatplotlibWidget(QWidget):
     def callback(self, in_data, frame_count, time_info, status):
         global ad_rdy_ev
         self.q.put(in_data)
-        self.frames.append(in_data)
-        return (None, pyaudio.paContinue)
+        self.data_list.append(in_data)
+        return b"", pyaudio.paContinue
 
     def read_audio_thead(self, q, stream, ad_rdy_ev):
         # 获取队列中的数据
-        while stream.is_active():
-            ad_rdy_ev.wait(timeout=0.1)  # 线程事件，等待0.1s
+        try:
+            while stream.is_active():
+                print("-", end="")
+                ad_rdy_ev.wait(timeout=0.1)  # 线程事件，等待0.1s
+                if not q.empty():
+                    data = q.get()
+                    while not q.empty():  # 将多余的数据扔掉，不然队列会越来越长
+                        q.get()
+                    self.rt_data = np.frombuffer(data, np.dtype('<i2'))
+                    self.rt_data = self.rt_data * self.window  # 这样做的目的是将曲线的两端固定，以免出现曲线整体发生波动
+                ad_rdy_ev.clear()
+        except:
             if not q.empty():
                 data = q.get()
                 while not q.empty():  # 将多余的数据扔掉，不然队列会越来越长
                     q.get()
                 self.rt_data = np.frombuffer(data, np.dtype('<i2'))
                 self.rt_data = self.rt_data * self.window  # 这样做的目的是将曲线的两端固定，以免出现曲线整体发生波动
-            ad_rdy_ev.clear()
+            logger.info("stream 出问题了，不过不影响")
 
     def endAudio(self, save_path=os.getcwd()):
         # 停止获取音频信息,并保存
-        self.stream.stop_stream()
-        self.stream.close()
-        self.p.terminate()
+        wav_data = b"".join(self.data_list)
+        with wave.open(os.path.join(save_path, "aaa.wav"), "wb") as wf:
+            wf.setnchannels(CHANNELS)
+            wf.setsampwidth(pyaudio.get_sample_size(pyaudio.paInt16))
+            wf.setframerate(RATE)
+            wf.writeframes(wav_data)
 
-        wf = wave.open(os.path.join(save_path, "aaa.wav"), 'wb')
-        wf.setnchannels(CHANNELS)
-        wf.setsampwidth(self.p.get_sample_size(pyaudio.paInt16))
-        wf.setframerate(RATE)
-        wf.writeframes(b''.join(self.frames))
-        wf.close()
+        try:
+            self.stream.stop_stream()
+            self.stream.close()
+            self.p.terminate()
+        except:
+            logger.info("关闭 stream 出问题了，不过不影响")
 
-        # 清空队列
-        while not self.q.empty():
-            self.q.get()
         # 重新初始化变量
         self.init_value()

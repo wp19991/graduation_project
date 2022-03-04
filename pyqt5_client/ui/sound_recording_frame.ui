@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Frame</class>
+ <widget class="QFrame" name="Frame">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>551</width>
+    <height>447</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>录音窗口</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../apprcc.qrc">
+    <normaloff>:/icon/resources/icon/语音.ico</normaloff>:/icon/resources/icon/语音.ico</iconset>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="MatplotlibWidget" name="widget" native="true"/>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;设置语音文件&lt;/p&gt;&lt;p&gt;保存路径&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="sound_recording_save_path_lineEdit"/>
+     </item>
+     <item>
+      <widget class="QPushButton" name="sound_recording_save_path_pushButton">
+       <property name="text">
+        <string>打开</string>
+       </property>
+       <property name="icon">
+        <iconset resource="../apprcc.qrc">
+         <normaloff>:/icon/resources/icon/文件夹.ico</normaloff>:/icon/resources/icon/文件夹.ico</iconset>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_3">
+     <item>
+      <widget class="QPushButton" name="sound_recording_save_path_start_pushButton">
+       <property name="text">
+        <string>开始</string>
+       </property>
+       <property name="icon">
+        <iconset resource="../apprcc.qrc">
+         <normaloff>:/icon/resources/icon/运行.ico</normaloff>:/icon/resources/icon/运行.ico</iconset>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="sound_recording_save_path_end_pushButton">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="text">
+        <string>结束并保存文件</string>
+       </property>
+       <property name="icon">
+        <iconset resource="../apprcc.qrc">
+         <normaloff>:/icon/resources/icon/结束.ico</normaloff>:/icon/resources/icon/结束.ico</iconset>
+       </property>
+       <property name="checkable">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>MatplotlibWidget</class>
+   <extends>QWidget</extends>
+   <header>core.MatplotlibWidget</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="../apprcc.qrc"/>
+ </resources>
+ <connections/>
+</ui>

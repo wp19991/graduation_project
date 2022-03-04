@@ -1,54 +1,42 @@
-import os.path
+import os
 
 from PyQt5.QtWidgets import *
 from myutil import global_var as gl
 from loguru import logger
 from ui.main import Ui_MainWindow as main_window
+from win.sound_recording_form import sound_recording_win
 
 
 class main_win(QMainWindow, main_window):
     def __init__(self, parent=None):
         super(main_win, self).__init__(parent)
+        self.srw = None  # 录音窗口
         self.setupUi(self)
         logger.info("进入主程序窗口")
+
+        # 工具-录音窗口 action 设置
+        self.action_sound_recording.triggered.connect(self.action_sound_recording_event)
 
         # 弹出窗口设置
         self.is_dockWidget_open = dict()
 
         # 弹出的录音窗口
-        self.sound_recording_dockWidget.hide()
-        self.is_dockWidget_open["sound_recording_dockWidget"] = False
-        self.action_show_sound_recording.triggered.connect(self.action_show_sound_recording_event)
-        # 保存文件的路径按钮设置
-        self.sound_recording_save_path_pushButton.clicked.connect(self.sound_recording_save_path_event)
-        self.sound_recording_save_path_lineEdit.setText(os.getcwd())
-        # 录音窗口的按钮设置
-        self.sound_recording_save_path_start_pushButton.clicked.connect(self.sound_recording_save_path_start_event)
-        self.sound_recording_save_path_end_pushButton.clicked.connect(self.sound_recording_save_path_end_event)
+        self.dockWidget.hide()
+        self.is_dockWidget_open["dockWidget"] = False
+        self.action_show_dockWidget.triggered.connect(self.action_show_dockWidget_event)
 
-    def sound_recording_save_path_event(self):
-        logger.info("保存文件的路径按钮设置")
+    def action_sound_recording_event(self):
+        logger.info("录音窗口")
+        if self.srw is not None:
+            self.srw.destroy(True)
+        self.srw = sound_recording_win()
+        self.srw.show()
 
-        pass
-
-    def sound_recording_save_path_start_event(self):
-        logger.info("开始录音")
-        self.widget.setVisible(True)
-        self.sound_recording_save_path_start_pushButton.setEnabled(False)
-        self.sound_recording_save_path_end_pushButton.setEnabled(True)
-        self.widget.start_audio()  # 触发MatplotlibWidget的startAudio函数
-
-    def sound_recording_save_path_end_event(self):
-        logger.info("结束录音")
-        self.sound_recording_save_path_start_pushButton.setEnabled(True)
-        self.sound_recording_save_path_end_pushButton.setEnabled(False)
-        self.widget.endAudio(save_path=os.getcwd())  # 触发MatplotlibWidget的endAudio函数
-
-    def action_show_sound_recording_event(self):
-        logger.info("设置录音窗口的开关")
-        if self.is_dockWidget_open["sound_recording_dockWidget"] == True:
-            self.sound_recording_dockWidget.hide()
-            self.is_dockWidget_open["sound_recording_dockWidget"] = False
+    def action_show_dockWidget_event(self):
+        logger.info("设置弹出窗口的开关")
+        if self.is_dockWidget_open["dockWidget"]:
+            self.dockWidget.hide()
+            self.is_dockWidget_open["dockWidget"] = False
         else:
-            self.sound_recording_dockWidget.show()
-            self.is_dockWidget_open["sound_recording_dockWidget"] = True
+            self.dockWidget.show()
+            self.is_dockWidget_open["dockWidget"] = True
