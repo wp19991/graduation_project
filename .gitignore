@@ -128,8 +128,9 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-# idea
+#idea
 .idea/
+# pyqt5_client
 /pyqt5_client/.idea/
 /pyqt5_client/build/
 /pyqt5_client/dist/
@@ -138,3 +139,10 @@ dmypy.json
 /pyqt5_client/启动eric6.bat
 /pyqt5_client/aaa.wav
 /pyqt5_client/resources/aaa.wav
+
+# pyqt5_client
+/speech_enhancement_core/.idea/
+/speech_enhancement_core/pytorch_SEGAN_package/save/G_5_0.3193.pkl
+/speech_enhancement_core/pytorch_SEGAN_package/save_wav/
+/speech_enhancement_core/pytorch_SEGAN_package/pytorch_to_torchscript/torch_script_eval.pt
+/speech_enhancement_core/pytorch_SEGAN_package/pytorch_SEGAN/wav/
