@@ -1,7 +1,15 @@
 import os
-import torch
-import torch.nn as nn
-import librosa
+import getopt
+import sys
+from torch import cat
+from torch import from_numpy
+from torch import Tensor
+from torch import no_grad
+from torch import load
+
+from torch import nn
+
+from librosa import load as librosa_load
 import numpy as np
 
 import soundfile as sf
@@ -72,7 +80,7 @@ class Generator(nn.Module):
         """
         for m in self.modules():
             if isinstance(m, nn.Conv1d) or isinstance(m, nn.ConvTranspose1d):
-                nn.init.xavier_normal(m.weight.data)
+                nn.init.xavier_normal_(m.weight.data)
 
     def forward(self, x, z):
         """
@@ -98,30 +106,30 @@ class Generator(nn.Module):
         c = self.enc11_nl(e11)
 
         # concatenate the thought vector with latent variable
-        encoded = torch.cat((c, z), dim=1)
+        encoded = cat((c, z), dim=1)
 
         # decoding step
         d10 = self.dec10(encoded)
         # dx_c : concatenated with skip-connected layer's output & passed nonlinear layer
-        d10_c = self.dec10_nl(torch.cat((d10, e10), dim=1))
+        d10_c = self.dec10_nl(cat((d10, e10), dim=1))
         d9 = self.dec9(d10_c)
-        d9_c = self.dec9_nl(torch.cat((d9, e9), dim=1))
+        d9_c = self.dec9_nl(cat((d9, e9), dim=1))
         d8 = self.dec8(d9_c)
-        d8_c = self.dec8_nl(torch.cat((d8, e8), dim=1))
+        d8_c = self.dec8_nl(cat((d8, e8), dim=1))
         d7 = self.dec7(d8_c)
-        d7_c = self.dec7_nl(torch.cat((d7, e7), dim=1))
+        d7_c = self.dec7_nl(cat((d7, e7), dim=1))
         d6 = self.dec6(d7_c)
-        d6_c = self.dec6_nl(torch.cat((d6, e6), dim=1))
+        d6_c = self.dec6_nl(cat((d6, e6), dim=1))
         d5 = self.dec5(d6_c)
-        d5_c = self.dec5_nl(torch.cat((d5, e5), dim=1))
+        d5_c = self.dec5_nl(cat((d5, e5), dim=1))
         d4 = self.dec4(d5_c)
-        d4_c = self.dec4_nl(torch.cat((d4, e4), dim=1))
+        d4_c = self.dec4_nl(cat((d4, e4), dim=1))
         d3 = self.dec3(d4_c)
-        d3_c = self.dec3_nl(torch.cat((d3, e3), dim=1))
+        d3_c = self.dec3_nl(cat((d3, e3), dim=1))
         d2 = self.dec2(d3_c)
-        d2_c = self.dec2_nl(torch.cat((d2, e2), dim=1))
+        d2_c = self.dec2_nl(cat((d2, e2), dim=1))
         d1 = self.dec1(d2_c)
-        d1_c = self.dec1_nl(torch.cat((d1, e1), dim=1))
+        d1_c = self.dec1_nl(cat((d1, e1), dim=1))
         out = self.dec_tanh(self.dec_final(d1_c))
         return out
 
@@ -161,18 +169,15 @@ def enh_segan(model, noisy):
         m_slice = np.expand_dims(m_slice, axis=(0, 1))
         # 转换为torch格式
 
-        m_slice = torch.from_numpy(m_slice)
+        m_slice = from_numpy(m_slice)
 
         # 生成 z
-        z = nn.init.normal_(torch.Tensor(1, 1024, 8))
+        z = nn.init.normal_(Tensor(1, 1024, 8))
 
         # 进行增强
         model.eval()
-        with torch.no_grad():
-            print("m_slice.shape", m_slice.shape)
-            print("z.shape", z.shape)
+        with no_grad():
             generated_slice = model(m_slice, z)
-            print("generated_slice.shape", generated_slice.shape)
         generated_slice = generated_slice.numpy()
         # 反预加重
         generated_slice = emphasis(generated_slice[0, 0, :], pre=False)
@@ -182,23 +187,25 @@ def enh_segan(model, noisy):
     enh_speech = enh_slice.reshape(N_slice * win_len)
     return enh_speech[:len(noisy)]
 
-def get_and_save_enh(model_file,noisy_file_path,save_path):
-	os.makedirs(save_path,exist_ok=True)
+
+def get_and_save_enh(model_file, noisy_file, save_path):
+    os.makedirs(save_path, exist_ok=True)
     generator = Generator()
-    generator.load_state_dict(torch.load(model_file, map_location='cpu'))
-    noisy, _ = librosa.load(noisy_file_path, sr=16000, mono=True)
+    generator.load_state_dict(load(model_file, map_location='cpu'))
+    noisy, _ = librosa_load(noisy_file, sr=16000, mono=True)
+
+    # noisy, sr = sf.read(noisy_file_path,dtype=np.float32)
 
     # 获取增强语音
     enh = enh_segan(generator, noisy)
 
     # 语音保存
-    sf.write(os.path.join(save_path, 'noisy-' + os.path.split(noisy_file_path)[-1]), noisy, 16000)
-    sf.write(os.path.join(save_path, 'enh-' + os.path.split(noisy_file_path)[-1]), enh, 16000)
+    sf.write(os.path.join(save_path, 'noisy-' + os.path.split(noisy_file)[-1]), noisy, 16000)
+    sf.write(os.path.join(save_path, 'enh-' + os.path.split(noisy_file)[-1]), enh, 16000)
 
     # 画频谱图
     # 绘图
-    fig_name = os.path.join(save_path, os.path.split(noisy_file_path)[-1][:-4] + '.jpg')
-
+    fig_name = os.path.join(save_path, os.path.split(noisy_file)[-1][:-4] + '.jpg')
 
     # 其中各个参数也可以用逗号,分隔开。第一个参数代表子图的行数；第二个参数代表该行图像的列数； 第三个参数代表每行的第几个图像。
     # 2代表行，1代表列，所以一共有2个图，1代表此时绘制第二个图。其中ax1是为了坐标轴主次刻度大小的设置
@@ -216,14 +223,26 @@ def get_and_save_enh(model_file,noisy_file_path,save_path):
 
 
 if __name__ == "__main__":
-    model_file = "save/G_5_0.3193.pkl"
-    noisy_file_path = './wav/p232_010.wav'
-    save_path = "ssss"
-    get_and_save_enh(model_file, noisy_file_path, save_path)
+    opts, args = getopt.gnu_getopt(sys.argv[1:], 'm:n:s', ['model_file=', 'noisy_file=', 'save_path='])
+    # model_file = "save/model.pkl"
+    # noisy_file = './wav/p232_010.wav'
+    # save_path = "ssss"
 
+    # print(opts)
 
+    model_file = None
+    noisy_file = None
+    save_path = None
 
+    for i in opts:
+        if i[0] == '-m' or i[0] == '--model_file':
+            model_file = i[1]
+            print("model_file=", model_file)
+        elif i[0] == '-n' or i[0] == '--noisy_file':
+            noisy_file = i[1]
+            print("noisy_file=", noisy_file)
+        elif i[0] == '-s' or i[0] == '--save_path':
+            save_path = i[1]
+            print("save_path=", save_path)
 
-
-
-
+    get_and_save_enh(model_file, noisy_file, save_path)
