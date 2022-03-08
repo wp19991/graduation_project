@@ -137,8 +137,11 @@ dmypy.json
 /pyqt5_client/qt-designer.bat
 /pyqt5_client/a.wav
 /pyqt5_client/启动eric6.bat
-/pyqt5_client/aaa.wav
+/pyqt5_client/test/aaa.wav
 /pyqt5_client/resources/aaa.wav
+/pyqt5_client/test/model.pkl
+/pyqt5_client/test/p232_010.wav
+/pyqt5_client/test/use.exe
 
 # pyqt5_client
 /speech_enhancement_core/.idea/

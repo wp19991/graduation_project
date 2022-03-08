@@ -25,4 +25,7 @@
     <file>resources/icon/语音.ico</file>
     <file>resources/icon/正确.ico</file>
   </qresource>
+  <qresource prefix="jpg">
+    <file>resources/jpg/plt_wav.jpg</file>
+  </qresource>
 </RCC>
