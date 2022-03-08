@@ -142,7 +142,7 @@ dmypy.json
 
 # pyqt5_client
 /speech_enhancement_core/.idea/
-/speech_enhancement_core/pytorch_SEGAN_package/save/model.pkl
+/speech_enhancement_core/pytorch_SEGAN_package/model_.pkl
 /speech_enhancement_core/pytorch_SEGAN_package/wav/desktop.ini
 /speech_enhancement_core/pytorch_SEGAN_package/ss/
 /speech_enhancement_core/pytorch_SEGAN_package/dist/
