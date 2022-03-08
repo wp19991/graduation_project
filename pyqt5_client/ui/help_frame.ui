@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Frame</class>
+ <widget class="QFrame" name="Frame">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>551</width>
+    <height>447</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>帮助</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../apprcc.qrc">
+    <normaloff>:/icon/resources/icon/帮助.ico</normaloff>:/icon/resources/icon/帮助.ico</iconset>
+  </property>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>90</y>
+     <width>72</width>
+     <height>15</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>帮助</string>
+   </property>
+  </widget>
+ </widget>
+ <resources>
+  <include location="../apprcc.qrc"/>
+ </resources>
+ <connections/>
+</ui>

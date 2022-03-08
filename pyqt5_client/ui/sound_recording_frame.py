@@ -57,7 +57,6 @@ class Ui_Frame(object):
         self.verticalLayout.addLayout(self.horizontalLayout_3)
 
         self.retranslateUi(Frame)
-        Frame.destroyed.connect(Frame.deleteLater)
         QtCore.QMetaObject.connectSlotsByName(Frame)
 
     def retranslateUi(self, Frame):
