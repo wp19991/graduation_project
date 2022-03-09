@@ -1,0 +1,871 @@
+﻿
+[Header]
+ProjectFileVersion = 1.1
+[General]
+Program name = 语音增强客户端
+Program version = 
+Windows 2000 = 0
+Windows XP = 0
+Windows Server 2003 = 0
+Windows Vista = 0
+Windows Server 2008 = 0
+Windows 7 = 0
+Windows 8 = 0
+Windows 10 = 1
+Windows Server 2016 = 0
+DoNotCheckOS = 0
+Company name = 18计科6班王鹏
+Website = https://github.com/wp19991/graduation_project
+SFA = 0
+DFA = 0
+Comp = 1
+[Graphics]
+Wizard image = C:\Users\admin\Desktop\graduation_project\打包安装文件\Wizard_2.bmp
+Header image = C:\Users\admin\Desktop\graduation_project\打包安装文件\Header_1.bmp
+Show Label = 1
+VisualStylesEnabled = 1
+[Files]
+Installation path = <ProgramFiles>\<AppName>\
+Autcip = 1
+[Uninstall]
+Vwau = 0
+Website = https://
+Include uninstaller = 1
+Uninstaller filename = Uninstall
+UseCustomDisplayIcon = 0
+CustomDisplayIcon = <InstallPath>\
+[Licence]
+Licence dialog = 1
+[Finish]
+Sart program = 1
+Reboot computer = 0
+Program = <InstallPath>\语音增强客户端.exe
+ProgramArguments = 
+[Shortcuts]
+Allowtc = 0
+Shortcut path = <Company>\<AppName>\
+[Serialoptions]
+Allows = 0
+Number = 1000
+Mask = #####-#####-#####-#####
+[SplashScreen]
+Image = 
+Sound = 
+Time = 2
+PlaySound = 0
+Allow = 0
+[Build]
+File = C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端-Setup.exe
+SetupIconPath = C:\Users\admin\Desktop\graduation_project\打包安装文件\探测声音.ico
+UninstallIconPath = C:\Program Files (x86)\solicus\InstallForge\icons\modern.ico
+CompressionMethod = 0
+CompressionLevel = 2
+[Updater]
+Allow = 0
+1 = <AppName>
+2 = <AppVersion>
+3 = http://
+4 = http://
+5 = http://
+6 = Update
+Language = 0
+RunProg = 
+RunProgs = 0
+Execdlls = 0
+[Languages]
+16
+[Files/Dirs]
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\_asyncio.pyd
+59 KB
+pyd
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\_bz2.pyd
+80 KB
+pyd
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\_cffi_backend.cp38-win_amd64.pyd
+178.5 KB
+pyd
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\_ctypes.pyd
+125.5 KB
+pyd
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\_decimal.pyd
+283 KB
+pyd
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\_elementtree.pyd
+213.5 KB
+pyd
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\_hashlib.pyd
+35 KB
+pyd
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\_lzma.pyd
+175 KB
+pyd
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\_multiprocessing.pyd
+22.5 KB
+pyd
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\_overlapped.pyd
+39 KB
+pyd
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\_portaudio.cp38-win_amd64.pyd
+205 KB
+pyd
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\_queue.pyd
+21 KB
+pyd
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\_socket.pyd
+71.5 KB
+pyd
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\_sqlite3.pyd
+73 KB
+pyd
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\_ssl.pyd
+155 KB
+pyd
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\_tkinter.pyd
+64.5 KB
+pyd
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\api-ms-win-core-console-l1-1-0.dll
+18.8 KB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\api-ms-win-core-datetime-l1-1-0.dll
+18.3 KB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\api-ms-win-core-debug-l1-1-0.dll
+18.3 KB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\api-ms-win-core-errorhandling-l1-1-0.dll
+18.3 KB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\api-ms-win-core-file-l1-1-0.dll
+21.8 KB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\api-ms-win-core-file-l1-2-0.dll
+18.3 KB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\api-ms-win-core-file-l2-1-0.dll
+18.3 KB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\api-ms-win-core-handle-l1-1-0.dll
+18.3 KB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\api-ms-win-core-heap-l1-1-0.dll
+18.8 KB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\api-ms-win-core-interlocked-l1-1-0.dll
+18.3 KB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\api-ms-win-core-libraryloader-l1-1-0.dll
+19.3 KB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\api-ms-win-core-localization-l1-2-0.dll
+20.8 KB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\api-ms-win-core-memory-l1-1-0.dll
+18.8 KB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\api-ms-win-core-namedpipe-l1-1-0.dll
+18.3 KB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\api-ms-win-core-processenvironment-l1-1-0.dll
+19.3 KB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\api-ms-win-core-processthreads-l1-1-0.dll
+20.3 KB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\api-ms-win-core-processthreads-l1-1-1.dll
+18.8 KB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\api-ms-win-core-profile-l1-1-0.dll
+17.8 KB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\api-ms-win-core-rtlsupport-l1-1-0.dll
+18.8 KB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\api-ms-win-core-string-l1-1-0.dll
+18.3 KB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\api-ms-win-core-synch-l1-1-0.dll
+20.3 KB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\api-ms-win-core-synch-l1-2-0.dll
+18.8 KB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\api-ms-win-core-sysinfo-l1-1-0.dll
+19.3 KB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\api-ms-win-core-timezone-l1-1-0.dll
+18.8 KB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\api-ms-win-core-util-l1-1-0.dll
+18.3 KB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\api-ms-win-crt-conio-l1-1-0.dll
+19.3 KB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\api-ms-win-crt-convert-l1-1-0.dll
+22.3 KB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\api-ms-win-crt-environment-l1-1-0.dll
+18.8 KB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\api-ms-win-crt-filesystem-l1-1-0.dll
+20.3 KB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\api-ms-win-crt-heap-l1-1-0.dll
+19.3 KB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\api-ms-win-crt-locale-l1-1-0.dll
+18.8 KB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\api-ms-win-crt-math-l1-1-0.dll
+27.3 KB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\api-ms-win-crt-multibyte-l1-1-0.dll
+26.3 KB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\api-ms-win-crt-process-l1-1-0.dll
+19.3 KB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\api-ms-win-crt-runtime-l1-1-0.dll
+22.8 KB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\api-ms-win-crt-stdio-l1-1-0.dll
+24.3 KB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\api-ms-win-crt-string-l1-1-0.dll
+24.3 KB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\api-ms-win-crt-time-l1-1-0.dll
+20.8 KB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\api-ms-win-crt-utility-l1-1-0.dll
+18.8 KB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\base_library.zip
+777.3 KB
+zip
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\d3dcompiler_47.dll
+4 MB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\kiwisolver.cp38-win_amd64.pyd
+115 KB
+pyd
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\lib_arpack-.JBTJ3EH6XBTOJRW4UXEFQDCV4M3KDT5D.gfortran-win_amd64.dll
+1.6 MB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\lib_blas_su.GBT4BF6LFZUHVUR7XJGSCCTPPC3QBPDW.gfortran-win_amd64.dll
+146 KB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\lib_cpropac.LZ6ZKB6QF2D6OPK4LBR2BL2NRSRJTX53.gfortran-win_amd64.dll
+838.9 KB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\lib_dop-f2p.ZRIYLRHKCGTZ7E4XYRDJPKIEKPDV23QH.gfortran-win_amd64.dll
+703.7 KB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\lib_dpropac.Q2H6ETLGCLDLQG24RM6ERK7QAQJBCPN5.gfortran-win_amd64.dll
+753.8 KB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\lib_lsoda-f.QV6HNOKDBJH3VU7CY33LWK37ZHUJ5C44.gfortran-win_amd64.dll
+740.5 KB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\lib_spropac.CMUCRHKRCGKZODLDG5AQIJK6AVZZKJHW.gfortran-win_amd64.dll
+756.6 KB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\lib_test_fo.BMG7XNVQO3Y6HRRDJ5ONJJ54IWAYGMM4.gfortran-win_amd64.dll
+574 KB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\lib_vode-f2.G5JNYNBPNJBX64VU3S6O5EW5VPZJYI6C.gfortran-win_amd64.dll
+972.6 KB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\lib_zpropac.PE24TP6TN6PMYXSF7N5EQ57RIYYYFUWV.gfortran-win_amd64.dll
+837.6 KB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\libansari.54HGNEJBQIYZX5TZPCQGLNVIPFU6NWEX.gfortran-win_amd64.dll
+130.4 KB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\libbanded5x.ABYHDVQF7COXVK3TNFLCFIE3ZJ55VK3U.gfortran-win_amd64.dll
+750.8 KB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\libbispeu.HPSBTY5F6WJ6KJ2NXCAHI76UA2TMTBUN.gfortran-win_amd64.dll
+1.9 MB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\libblkdta00.WVSTB7IKZB6HIBJBRTLONTDDLX45W3KN.gfortran-win_amd64.dll
+739 KB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\libchkder.CIYBJUMHB77HZDWZ7O7OQB7IFLU42V62.gfortran-win_amd64.dll
+302.5 KB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\libcobyla2.2BWZ2MDM35NG3J3FO4MPMLJ2Z6EZ6EOI.gfortran-win_amd64.dll
+728.6 KB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\libcrypto-1_1-x64.dll
+3.1 MB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\libd_odr.BHE5JALHSZ6DIEWQMWW6K6S6SSQJUFW2.gfortran-win_amd64.dll
+1.3 MB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\libdcsrch.TWU2WQ2D2VRC5ZBASJTN75WEVOQEH4AA.gfortran-win_amd64.dll
+81.6 KB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\libdet.LTWBOQRSX32MNDCVUWNOI5E435HRU6YP.gfortran-win_amd64.dll
+87.9 KB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\libdfft.FFXWMOQPKZXKAXKUFMVGLDO62AO7VPGS.gfortran-win_amd64.dll
+1.7 MB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\libdfitpack.YXWNLD73YBGP5FO245APK6CUWEW5I2TK.gfortran-win_amd64.dll
+1.9 MB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\libdgamln.KENFY5NPMIE5SVC67G4NF6ARA7J2ONEV.gfortran-win_amd64.dll
+2.6 MB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\libdqag.KFXYQPE7TNPTKVZEOFZD5XRLKOIHA7RT.gfortran-win_amd64.dll
+876.7 KB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\libEGL.dll
+24.5 KB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\libffi-8.dll
+34.2 KB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\libgetbreak.MQHZD2DJBWPPOFUZ6NM5DKQEVQSYTXY5.gfortran-win_amd64.dll
+363.5 KB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\libGLESv2.dll
+3.2 MB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\liblbfgsb.IBQVICK3GETUIWC3SE6D3FM7Q4K2W4JC.gfortran-win_amd64.dll
+790.9 KB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\libmvndst.7O53DZ5WZNFDVHAUQKHVN7SV37RNFUZG.gfortran-win_amd64.dll
+160.4 KB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\libnnls.O7YW55GFEWHHLJHC7HW56M4N2SDMEE6J.gfortran-win_amd64.dll
+593.5 KB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\libopenblas.XWYDX2IKJW2NMTWSFYNGFUWKQU3LYTCZ.gfortran-win_amd64.dll
+32.9 MB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\libslsqp_op.RZ4TV2HJX5AEA5VT2ZSATTL3ELYSVEN7.gfortran-win_amd64.dll
+244.8 KB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\libspecfun.OGUV3EZXE6PFA7VHXS36IRLE5K54SPJS.gfortran-win_amd64.dll
+1.4 MB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\libssl-1_1-x64.dll
+665.5 KB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\libwrap_dum.QHE7IE27WXDLOUF7YPJIZTUSD7PSSW27.gfortran-win_amd64.dll
+162.9 KB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\libwrap_dum.TFX7VWQFDZU2QGZETLZYZ64XLNXVLKLS.gfortran-win_amd64.dll
+65 KB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\msvcp140.dll
+618.3 KB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\MSVCP140_1.dll
+31 KB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\opengl32sw.dll
+20 MB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\pyexpat.pyd
+200 KB
+pyd
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\python3.dll
+50.5 KB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\python38.dll
+4.6 MB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\Qt5Core.dll
+5.7 MB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\Qt5DBus.dll
+426.5 KB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\Qt5Gui.dll
+6.7 MB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\Qt5Network.dll
+1.3 MB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\Qt5Qml.dll
+3.4 MB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\Qt5QmlModels.dll
+428.5 KB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\Qt5Quick.dll
+4 MB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\Qt5Svg.dll
+323 KB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\Qt5WebSockets.dll
+146 KB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\Qt5Widgets.dll
+5.2 MB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\select.pyd
+19 KB
+pyd
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\sqlite3.dll
+1.4 MB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\tcl86t.dll
+1.6 MB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\tk86t.dll
+1.4 MB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\ucrtbase.dll
+992.8 KB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\unicodedata.pyd
+1 MB
+pyd
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\VCOMP140.DLL
+180.3 KB
+DLL
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\VCRUNTIME140.dll
+99.3 KB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\vcruntime140_1.dll
+43.5 KB
+dll
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\语音增强客户端.exe
+14.8 MB
+exe
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\_soundfile_data\
+N/A
+[Folder]
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\altgraph-0.17.2.dist-info\
+N/A
+[Folder]
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\bcrypt\
+N/A
+[Folder]
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\certifi\
+N/A
+[Folder]
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\cryptography\
+N/A
+[Folder]
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\cryptography-36.0.1.dist-info\
+N/A
+[Folder]
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\librosa\
+N/A
+[Folder]
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\llvmlite\
+N/A
+[Folder]
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\matplotlib\
+N/A
+[Folder]
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\nacl\
+N/A
+[Folder]
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\numba\
+N/A
+[Folder]
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\numpy\
+N/A
+[Folder]
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\PIL\
+N/A
+[Folder]
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\pyinstaller-4.10.dist-info\
+N/A
+[Folder]
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\PyQt5\
+N/A
+[Folder]
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\resampy\
+N/A
+[Folder]
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\scipy\
+N/A
+[Folder]
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\setuptools-58.0.4-py3.8.egg-info\
+N/A
+[Folder]
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\sklearn\
+N/A
+[Folder]
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\speech_enhancement_core\
+N/A
+[Folder]
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\tcl\
+N/A
+[Folder]
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\tcl8\
+N/A
+[Folder]
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\tk\
+N/A
+[Folder]
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\torch\
+N/A
+[Folder]
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\torchaudio\
+N/A
+[Folder]
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\torchvision\
+N/A
+[Folder]
+C:\Users\admin\Desktop\graduation_project\打包安装文件\语音增强客户端\wheel-0.37.1-py3.9.egg-info\
+N/A
+[Folder]
+[Licence_Begin]
+17884
+{\rtf1\fbidis\ansi\ansicpg936\deff0\deflang1033\deflangfe2052{\fonttbl{\f0\fnil\fcharset0 Arial;}}
+\viewkind4\uc1\pard\ltrpar\cf0\lang2052\fs20 A. HISTORY OF THE SOFTWARE\par
+==========================\par
+\par
+Python was created in the early 1990s by Guido van Rossum at Stichting\par
+Mathematisch Centrum (CWI, see http://www.cwi.nl) in the Netherlands\par
+as a successor of a language called ABC.  Guido remains Python's\par
+principal author, although it includes many contributions from others.\par
+\par
+In 1995, Guido continued his work on Python at the Corporation for\par
+National Research Initiatives (CNRI, see http://www.cnri.reston.va.us)\par
+in Reston, Virginia where he released several versions of the\par
+software.\par
+\par
+In May 2000, Guido and the Python core development team moved to\par
+BeOpen.com to form the BeOpen PythonLabs team.  In October of the same\par
+year, the PythonLabs team moved to Digital Creations, which became\par
+Zope Corporation.  In 2001, the Python Software Foundation (PSF, see\par
+https://www.python.org/psf/) was formed, a non-profit organization\par
+created specifically to own Python-related Intellectual Property.\par
+Zope Corporation was a sponsoring member of the PSF.\par
+\par
+All Python releases are Open Source (see http://www.opensource.org for\par
+the Open Source Definition).  Historically, most, but not all, Python\par
+releases have also been GPL-compatible; the table below summarizes\par
+the various releases.\par
+\par
+    Release         Derived     Year        Owner       GPL-\par
+                    from                                compatible? (1)\par
+\par
+    0.9.0 thru 1.2              1991-1995   CWI         yes\par
+    1.3 thru 1.5.2  1.2         1995-1999   CNRI        yes\par
+    1.6             1.5.2       2000        CNRI        no\par
+    2.0             1.6         2000        BeOpen.com  no\par
+    1.6.1           1.6         2001        CNRI        yes (2)\par
+    2.1             2.0+1.6.1   2001        PSF         no\par
+    2.0.1           2.0+1.6.1   2001        PSF         yes\par
+    2.1.1           2.1+2.0.1   2001        PSF         yes\par
+    2.1.2           2.1.1       2002        PSF         yes\par
+    2.1.3           2.1.2       2002        PSF         yes\par
+    2.2 and above   2.1.1       2001-now    PSF         yes\par
+\par
+Footnotes:\par
+\par
+(1) GPL-compatible doesn't mean that we're distributing Python under\par
+    the GPL.  All Python licenses, unlike the GPL, let you distribute\par
+    a modified version without making your changes open source.  The\par
+    GPL-compatible licenses make it possible to combine Python with\par
+    other software that is released under the GPL; the others don't.\par
+\par
+(2) According to Richard Stallman, 1.6.1 is not GPL-compatible,\par
+    because its license has a choice of law clause.  According to\par
+    CNRI, however, Stallman's lawyer has told CNRI's lawyer that 1.6.1\par
+    is "not incompatible" with the GPL.\par
+\par
+Thanks to the many outside volunteers who have worked under Guido's\par
+direction to make these releases possible.\par
+\par
+\par
+B. TERMS AND CONDITIONS FOR ACCESSING OR OTHERWISE USING PYTHON\par
+===============================================================\par
+\par
+PYTHON SOFTWARE FOUNDATION LICENSE VERSION 2\par
+--------------------------------------------\par
+\par
+1. This LICENSE AGREEMENT is between the Python Software Foundation\par
+("PSF"), and the Individual or Organization ("Licensee") accessing and\par
+otherwise using this software ("Python") in source or binary form and\par
+its associated documentation.\par
+\par
+2. Subject to the terms and conditions of this License Agreement, PSF hereby\par
+grants Licensee a nonexclusive, royalty-free, world-wide license to reproduce,\par
+analyze, test, perform and/or display publicly, prepare derivative works,\par
+distribute, and otherwise use Python alone or in any derivative version,\par
+provided, however, that PSF's License Agreement and PSF's notice of copyright,\par
+i.e., "Copyright (c) 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010,\par
+2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021 Python Software Foundation;\par
+All Rights Reserved" are retained in Python alone or in any derivative version\par
+prepared by Licensee.\par
+\par
+3. In the event Licensee prepares a derivative work that is based on\par
+or incorporates Python or any part thereof, and wants to make\par
+the derivative work available to others as provided herein, then\par
+Licensee hereby agrees to include in any such work a brief summary of\par
+the changes made to Python.\par
+\par
+4. PSF is making Python available to Licensee on an "AS IS"\par
+basis.  PSF MAKES NO REPRESENTATIONS OR WARRANTIES, EXPRESS OR\par
+IMPLIED.  BY WAY OF EXAMPLE, BUT NOT LIMITATION, PSF MAKES NO AND\par
+DISCLAIMS ANY REPRESENTATION OR WARRANTY OF MERCHANTABILITY OR FITNESS\par
+FOR ANY PARTICULAR PURPOSE OR THAT THE USE OF PYTHON WILL NOT\par
+INFRINGE ANY THIRD PARTY RIGHTS.\par
+\par
+5. PSF SHALL NOT BE LIABLE TO LICENSEE OR ANY OTHER USERS OF PYTHON\par
+FOR ANY INCIDENTAL, SPECIAL, OR CONSEQUENTIAL DAMAGES OR LOSS AS\par
+A RESULT OF MODIFYING, DISTRIBUTING, OR OTHERWISE USING PYTHON,\par
+OR ANY DERIVATIVE THEREOF, EVEN IF ADVISED OF THE POSSIBILITY THEREOF.\par
+\par
+6. This License Agreement will automatically terminate upon a material\par
+breach of its terms and conditions.\par
+\par
+7. Nothing in this License Agreement shall be deemed to create any\par
+relationship of agency, partnership, or joint venture between PSF and\par
+Licensee.  This License Agreement does not grant permission to use PSF\par
+trademarks or trade name in a trademark sense to endorse or promote\par
+products or services of Licensee, or any third party.\par
+\par
+8. By copying, installing or otherwise using Python, Licensee\par
+agrees to be bound by the terms and conditions of this License\par
+Agreement.\par
+\par
+\par
+BEOPEN.COM LICENSE AGREEMENT FOR PYTHON 2.0\par
+-------------------------------------------\par
+\par
+BEOPEN PYTHON OPEN SOURCE LICENSE AGREEMENT VERSION 1\par
+\par
+1. This LICENSE AGREEMENT is between BeOpen.com ("BeOpen"), having an\par
+office at 160 Saratoga Avenue, Santa Clara, CA 95051, and the\par
+Individual or Organization ("Licensee") accessing and otherwise using\par
+this software in source or binary form and its associated\par
+documentation ("the Software").\par
+\par
+2. Subject to the terms and conditions of this BeOpen Python License\par
+Agreement, BeOpen hereby grants Licensee a non-exclusive,\par
+royalty-free, world-wide license to reproduce, analyze, test, perform\par
+and/or display publicly, prepare derivative works, distribute, and\par
+otherwise use the Software alone or in any derivative version,\par
+provided, however, that the BeOpen Python License is retained in the\par
+Software, alone or in any derivative version prepared by Licensee.\par
+\par
+3. BeOpen is making the Software available to Licensee on an "AS IS"\par
+basis.  BEOPEN MAKES NO REPRESENTATIONS OR WARRANTIES, EXPRESS OR\par
+IMPLIED.  BY WAY OF EXAMPLE, BUT NOT LIMITATION, BEOPEN MAKES NO AND\par
+DISCLAIMS ANY REPRESENTATION OR WARRANTY OF MERCHANTABILITY OR FITNESS\par
+FOR ANY PARTICULAR PURPOSE OR THAT THE USE OF THE SOFTWARE WILL NOT\par
+INFRINGE ANY THIRD PARTY RIGHTS.\par
+\par
+4. BEOPEN SHALL NOT BE LIABLE TO LICENSEE OR ANY OTHER USERS OF THE\par
+SOFTWARE FOR ANY INCIDENTAL, SPECIAL, OR CONSEQUENTIAL DAMAGES OR LOSS\par
+AS A RESULT OF USING, MODIFYING OR DISTRIBUTING THE SOFTWARE, OR ANY\par
+DERIVATIVE THEREOF, EVEN IF ADVISED OF THE POSSIBILITY THEREOF.\par
+\par
+5. This License Agreement will automatically terminate upon a material\par
+breach of its terms and conditions.\par
+\par
+6. This License Agreement shall be governed by and interpreted in all\par
+respects by the law of the State of California, excluding conflict of\par
+law provisions.  Nothing in this License Agreement shall be deemed to\par
+create any relationship of agency, partnership, or joint venture\par
+between BeOpen and Licensee.  This License Agreement does not grant\par
+permission to use BeOpen trademarks or trade names in a trademark\par
+sense to endorse or promote products or services of Licensee, or any\par
+third party.  As an exception, the "BeOpen Python" logos available at\par
+http://www.pythonlabs.com/logos.html may be used according to the\par
+permissions granted on that web page.\par
+\par
+7. By copying, installing or otherwise using the software, Licensee\par
+agrees to be bound by the terms and conditions of this License\par
+Agreement.\par
+\par
+\par
+CNRI LICENSE AGREEMENT FOR PYTHON 1.6.1\par
+---------------------------------------\par
+\par
+1. This LICENSE AGREEMENT is between the Corporation for National\par
+Research Initiatives, having an office at 1895 Preston White Drive,\par
+Reston, VA 20191 ("CNRI"), and the Individual or Organization\par
+("Licensee") accessing and otherwise using Python 1.6.1 software in\par
+source or binary form and its associated documentation.\par
+\par
+2. Subject to the terms and conditions of this License Agreement, CNRI\par
+hereby grants Licensee a nonexclusive, royalty-free, world-wide\par
+license to reproduce, analyze, test, perform and/or display publicly,\par
+prepare derivative works, distribute, and otherwise use Python 1.6.1\par
+alone or in any derivative version, provided, however, that CNRI's\par
+License Agreement and CNRI's notice of copyright, i.e., "Copyright (c)\par
+1995-2001 Corporation for National Research Initiatives; All Rights\par
+Reserved" are retained in Python 1.6.1 alone or in any derivative\par
+version prepared by Licensee.  Alternately, in lieu of CNRI's License\par
+Agreement, Licensee may substitute the following text (omitting the\par
+quotes): "Python 1.6.1 is made available subject to the terms and\par
+conditions in CNRI's License Agreement.  This Agreement together with\par
+Python 1.6.1 may be located on the Internet using the following\par
+unique, persistent identifier (known as a handle): 1895.22/1013.  This\par
+Agreement may also be obtained from a proxy server on the Internet\par
+using the following URL: http://hdl.handle.net/1895.22/1013".\par
+\par
+3. In the event Licensee prepares a derivative work that is based on\par
+or incorporates Python 1.6.1 or any part thereof, and wants to make\par
+the derivative work available to others as provided herein, then\par
+Licensee hereby agrees to include in any such work a brief summary of\par
+the changes made to Python 1.6.1.\par
+\par
+4. CNRI is making Python 1.6.1 available to Licensee on an "AS IS"\par
+basis.  CNRI MAKES NO REPRESENTATIONS OR WARRANTIES, EXPRESS OR\par
+IMPLIED.  BY WAY OF EXAMPLE, BUT NOT LIMITATION, CNRI MAKES NO AND\par
+DISCLAIMS ANY REPRESENTATION OR WARRANTY OF MERCHANTABILITY OR FITNESS\par
+FOR ANY PARTICULAR PURPOSE OR THAT THE USE OF PYTHON 1.6.1 WILL NOT\par
+INFRINGE ANY THIRD PARTY RIGHTS.\par
+\par
+5. CNRI SHALL NOT BE LIABLE TO LICENSEE OR ANY OTHER USERS OF PYTHON\par
+1.6.1 FOR ANY INCIDENTAL, SPECIAL, OR CONSEQUENTIAL DAMAGES OR LOSS AS\par
+A RESULT OF MODIFYING, DISTRIBUTING, OR OTHERWISE USING PYTHON 1.6.1,\par
+OR ANY DERIVATIVE THEREOF, EVEN IF ADVISED OF THE POSSIBILITY THEREOF.\par
+\par
+6. This License Agreement will automatically terminate upon a material\par
+breach of its terms and conditions.\par
+\par
+7. This License Agreement shall be governed by the federal\par
+intellectual property law of the United States, including without\par
+limitation the federal copyright law, and, to the extent such\par
+U.S. federal law does not apply, by the law of the Commonwealth of\par
+Virginia, excluding Virginia's conflict of law provisions.\par
+Notwithstanding the foregoing, with regard to derivative works based\par
+on Python 1.6.1 that incorporate non-separable material that was\par
+previously distributed under the GNU General Public License (GPL), the\par
+law of the Commonwealth of Virginia shall govern this License\par
+Agreement only as to issues arising under or with respect to\par
+Paragraphs 4, 5, and 7 of this License Agreement.  Nothing in this\par
+License Agreement shall be deemed to create any relationship of\par
+agency, partnership, or joint venture between CNRI and Licensee.  This\par
+License Agreement does not grant permission to use CNRI trademarks or\par
+trade name in a trademark sense to endorse or promote products or\par
+services of Licensee, or any third party.\par
+\par
+8. By clicking on the "ACCEPT" button where indicated, or by copying,\par
+installing or otherwise using Python 1.6.1, Licensee agrees to be\par
+bound by the terms and conditions of this License Agreement.\par
+\par
+        ACCEPT\par
+\par
+\par
+CWI LICENSE AGREEMENT FOR PYTHON 0.9.0 THROUGH 1.2\par
+--------------------------------------------------\par
+\par
+Copyright (c) 1991 - 1995, Stichting Mathematisch Centrum Amsterdam,\par
+The Netherlands.  All rights reserved.\par
+\par
+Permission to use, copy, modify, and distribute this software and its\par
+documentation for any purpose and without fee is hereby granted,\par
+provided that the above copyright notice appear in all copies and that\par
+both that copyright notice and this permission notice appear in\par
+supporting documentation, and that the name of Stichting Mathematisch\par
+Centrum or CWI not be used in advertising or publicity pertaining to\par
+distribution of the software without specific, written prior\par
+permission.\par
+\par
+STICHTING MATHEMATISCH CENTRUM DISCLAIMS ALL WARRANTIES WITH REGARD TO\par
+THIS SOFTWARE, INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND\par
+FITNESS, IN NO EVENT SHALL STICHTING MATHEMATISCH CENTRUM BE LIABLE\par
+FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES\par
+WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN\par
+ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT\par
+OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.\par
+\par
+From PyTorch:\par
+\par
+Copyright (c) 2016-     Facebook, Inc            (Adam Paszke)\par
+Copyright (c) 2014-     Facebook, Inc            (Soumith Chintala)\par
+Copyright (c) 2011-2014 Idiap Research Institute (Ronan Collobert)\par
+Copyright (c) 2012-2014 Deepmind Technologies    (Koray Kavukcuoglu)\par
+Copyright (c) 2011-2012 NEC Laboratories America (Koray Kavukcuoglu)\par
+Copyright (c) 2011-2013 NYU                      (Clement Farabet)\par
+Copyright (c) 2006-2010 NEC Laboratories America (Ronan Collobert, Leon Bottou, Iain Melvin, Jason Weston)\par
+Copyright (c) 2006      Idiap Research Institute (Samy Bengio)\par
+Copyright (c) 2001-2004 Idiap Research Institute (Ronan Collobert, Samy Bengio, Johnny Mariethoz)\par
+\par
+From Caffe2:\par
+\par
+Copyright (c) 2016-present, Facebook Inc. All rights reserved.\par
+\par
+All contributions by Facebook:\par
+Copyright (c) 2016 Facebook Inc.\par
+\par
+All contributions by Google:\par
+Copyright (c) 2015 Google Inc.\par
+All rights reserved.\par
+\par
+All contributions by Yangqing Jia:\par
+Copyright (c) 2015 Yangqing Jia\par
+All rights reserved.\par
+\par
+All contributions by Kakao Brain:\par
+Copyright 2019-2020 Kakao Brain\par
+\par
+All contributions by Cruise LLC:\par
+Copyright (c) 2022 Cruise LLC.\par
+All rights reserved.\par
+\par
+All contributions from Caffe:\par
+Copyright(c) 2013, 2014, 2015, the respective contributors\par
+All rights reserved.\par
+\par
+All other contributions:\par
+Copyright(c) 2015, 2016 the respective contributors\par
+All rights reserved.\par
+\par
+Caffe2 uses a copyright model similar to Caffe: each contributor holds\par
+copyright over their contributions to Caffe2. The project versioning records\par
+all such contribution and copyright details. If a contributor wants to further\par
+mark their specific copyright on a particular contribution, they should\par
+indicate their copyright solely in the commit message of the change when it is\par
+committed.\par
+\par
+All rights reserved.\par
+\par
+Redistribution and use in source and binary forms, with or without\par
+modification, are permitted provided that the following conditions are met:\par
+\par
+1. Redistributions of source code must retain the above copyright\par
+   notice, this list of conditions and the following disclaimer.\par
+\par
+2. Redistributions in binary form must reproduce the above copyright\par
+   notice, this list of conditions and the following disclaimer in the\par
+   documentation and/or other materials provided with the distribution.\par
+\par
+3. Neither the names of Facebook, Deepmind Technologies, NYU, NEC Laboratories America\par
+   and IDIAP Research Institute nor the names of its contributors may be\par
+   used to endorse or promote products derived from this software without\par
+   specific prior written permission.\par
+\par
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"\par
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\par
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE\par
+ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE\par
+LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR\par
+CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF\par
+SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS\par
+INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN\par
+CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)\par
+ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE\par
+POSSIBILITY OF SUCH DAMAGE.\par
+}
+ [Licence_End]
+[Registry]
+[Variables]
+[SCs]
+Desktop
+语音增强客户端
+<InstallPath>\语音增强客户端.exe
+
+
+0
+[IFP_End]
+[Serials]
+[Serials_End]
+[Commands]

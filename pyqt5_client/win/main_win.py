@@ -8,6 +8,9 @@ from PyQt5.QtGui import QPixmap
 from PyQt5.QtWidgets import *
 from myutil import global_var as gl
 from loguru import logger
+
+from speech_enhancement_core.pytorch_SEGAN.use import get_and_save_enh
+from speech_enhancement_core.specsub.sub_spec import specsub
 from ui.main import Ui_MainWindow as main_window
 from win.sound_recording_form import sound_recording_win
 from win.about_form import about_win
@@ -53,6 +56,13 @@ class main_win(QMainWindow, main_window):
         # 帮助-帮助窗口 action 设置
         self.action_help.triggered.connect(self.action_help_event)
 
+        # 模型驱动文件
+        self.pytorch_SEGAN_exe_path = "./speech_enhancement_core/pytorch_SEGAN/use.exe"
+
+        # 默认模型输入
+        if os.path.exists("./speech_enhancement_core/pytorch_SEGAN/model.pkl"):
+            self.save_model_file_path_lineEdit.setText("./speech_enhancement_core/pytorch_SEGAN/model.pkl")
+
         # 按钮事件绑定
         self.save_model_file_path_pushButton.clicked.connect(self.save_model_file_path_event)
         self.need_enh_wav_file_path_pushButton.clicked.connect(self.need_enh_wav_file_path_event)
@@ -96,14 +106,7 @@ class main_win(QMainWindow, main_window):
             logger.error("没有这个文件夹:{}，请重新选择".format(self.save_path_lineEdit.text()))
             return
 
-        # 获得三个路径
-        # --model_file=save/model.pkl --noisy_file=wav/p232_010.wav --save_path=ss
-        # 命令行调用use.exe进行增强
-        self.process(model_file=self.save_model_file_path_lineEdit.text(),
-                     noisy_file=self.need_enh_wav_file_path_lineEdit.text(),
-                     save_path=self.save_path_lineEdit.text())
-
-        # 更新进度条
+        # 调用线程，进行增强,并且更新进度条
         thread = Thread(target=self.threadFunc)
         thread.start()
 
@@ -128,16 +131,27 @@ class main_win(QMainWindow, main_window):
 
     def threadFunc(self):
         try:
+            # 获得三个路径
+            # --model_file=save/model.pkl --noisy_file=wav/p232_010.wav --save_path=ss
+            # 进行增强
+            get_and_save_enh(model_file=self.save_model_file_path_lineEdit.text(),
+                             noisy_file=self.need_enh_wav_file_path_lineEdit.text(),
+                             save_path=self.save_path_lineEdit.text())
+
+            a = specsub(noisy_wav_file_path=self.need_enh_wav_file_path_lineEdit.text())
+            a.fit()
+            a.plt_save(output_path=self.save_path_lineEdit.text())
+            a.output_file(wav_file_output_path=self.save_path_lineEdit.text())
+
+            # 更新进度条
             step = 0
             while os.path.exists(os.path.join(self.save_path_lineEdit.text(),
                                               os.path.splitext(
                                                   os.path.split(self.need_enh_wav_file_path_lineEdit.text())[1])[
                                                   0] + ".jpg")) == False:
-                time.sleep(0.5)
-                # print(step)
-                step += 1
-                global_ms.jdt.emit(self.enh_progressBar, step)
+                return
 
+            step = 0
             need = 100 - step
             for i in range(20):
                 time.sleep(0.1)
@@ -146,10 +160,10 @@ class main_win(QMainWindow, main_window):
         except:
             global_ms.jdt.emit(self.enh_progressBar, 100)
 
-    def process(self, model_file, noisy_file, save_path):
-        QtCore.QProcess.startDetached(r"C:\Users\wp\Desktop\graduation_project\pyqt5_client\test\use.exe",
-                                      ["-m", model_file, "-n", noisy_file,
-                                       "--save_path", save_path])
+    # def process(self, model_file, noisy_file, save_path):
+    #     QtCore.QProcess.startDetached(self.pytorch_SEGAN_exe_path,
+    #                                   ["-m", model_file, "-n", noisy_file,
+    #                                    "--save_path", save_path])
 
     def paly_wav_file_event(self):
         pass

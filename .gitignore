@@ -143,10 +143,12 @@ dmypy.json
 /pyqt5_client/test/p232_010.wav
 /pyqt5_client/test/use.exe
 
-# pyqt5_client
-/speech_enhancement_core/.idea/
-/speech_enhancement_core/pytorch_SEGAN_package/model_.pkl
-/speech_enhancement_core/pytorch_SEGAN_package/wav/desktop.ini
-/speech_enhancement_core/pytorch_SEGAN_package/ss/
-/speech_enhancement_core/pytorch_SEGAN_package/dist/
-/speech_enhancement_core/pytorch_SEGAN_package/build/
+/打包安装文件/语音增强客户端/
+/打包安装文件/语音增强客户端-Setup.exe
+/pyqt5_client/PyAudio-0.2.11-cp38-cp38-win_amd64.whl
+/pyqt5_client/speech_enhancement_core/pytorch_SEGAN/model.pkl
+/pyqt5_client/speech_enhancement_core/pytorch_SEGAN/use.exe
+/pyqt5_client/speech_enhancement_core/pytorch_SEGAN/p232_010.wav
+/pyqt5_client/test/
+/musan.tar
+/pyqt5_client/speech_enhancement_core/pytorch_SEGAN/ssss/

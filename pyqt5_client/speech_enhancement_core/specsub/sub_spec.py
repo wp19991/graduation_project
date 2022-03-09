@@ -57,37 +57,35 @@ class specsub:
 
     def output_file(self, wav_file_output_path=os.getcwd(), name=None):
         if name is None:
-            name = os.path.basename(self.noisy_wav_file_path) + "_enhance.wav"
+            name = os.path.basename(self.noisy_wav_file_path) + "_sub_spec_enhance.wav"
         opp = os.path.join(wav_file_output_path, name)
         sf.write(opp, self.enhance, self.fs)
         return name
 
-    def plt_noisy(self, is_show=True, is_save=True, output_path=os.getcwd()):
+    def plt_save(self,output_path=os.getcwd()):
         # 绘制噪音的谱图
-        plt.specgram(self.noisy, NFFT=256, Fs=self.fs)
-        plt.xlabel("noisy specgram")
-        if is_save:
-            opp = os.path.join(output_path, "noisy_specgram" + os.path.basename(self.noisy_wav_file_path) + ".png")
-            plt.savefig(opp)
-        if is_show:
-            plt.show()
+        plt.subplot(3, 1, 1)
+        plt.specgram(self.noisy, NFFT=512, Fs=16000)
+        plt.xlabel("before specgram")
+        plt.subplots_adjust(left=None, bottom=None, right=None, top=None,
+                            wspace=0, hspace=0.8)
 
-    def plt_enhece(self, is_show=True, is_save=True, output_path=os.getcwd()):
-        if not self.is_fit:
-            return 0
-        # 绘制处理后的谱图
-        plt.specgram(self.enhance, NFFT=256, Fs=self.fs)
-        plt.xlabel("enhece specgram")
-        if is_save:
-            opp = os.path.join(output_path, "enhece_specgram" + os.path.basename(self.noisy_wav_file_path) + ".png")
-            plt.savefig(opp)
-        if is_show:
-            plt.show()
+        plt.subplot(3, 1, 2)
+        plt.specgram(self.noisy - self.enhance, NFFT=512, Fs=16000)
+        plt.xlabel("background noisy specgram")
+        plt.subplots_adjust(left=None, bottom=None, right=None, top=None,
+                            wspace=0, hspace=0.8)
+
+        plt.subplot(3, 1, 3)
+        plt.specgram(self.enhance, NFFT=512, Fs=16000)
+        plt.xlabel("enhece after specgram")
+        opp = os.path.join(output_path,
+                           "noisy_sub_spec_specgram_" + os.path.basename(self.noisy_wav_file_path) + ".png")
+        plt.savefig(opp)
 
 
 if __name__ == "__main__":
     a = specsub(noisy_wav_file_path=r"C:\Users\wp\Desktop\graduation_project\specsub\noise_wav\speech-us-gov-0000.wav")
     a.fit()
-    a.plt_noisy(is_show=False, is_save=True, output_path=r"C:\Users\wp\Desktop\graduation_project\output")
-    a.plt_enhece(is_show=False, is_save=True, output_path=r"C:\Users\wp\Desktop\graduation_project\output")
+    a.plt_save(output_path=r"C:\Users\wp\Desktop\graduation_project\output")
     a.output_file(wav_file_output_path=r"C:\Users\wp\Desktop\graduation_project\output")

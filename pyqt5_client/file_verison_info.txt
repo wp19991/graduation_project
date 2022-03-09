@@ -7,7 +7,7 @@ VSVersionInfo(
 # filevers and prodvers should be always a tuple with four items: (1, 2, 3, 4)
 # Set not needed items to zero 0.
 filevers=(0, 0, 0, 1),  # 文件版本
-prodvers=(4, 5, 9, 4),
+prodvers=(0, 0, 0, 1),
 # Contains a bitmask that specifies the valid bits 'flags'r
 mask=0x3f,
 # Contains a bitmask that specifies the Boolean attributes of the file.
@@ -30,12 +30,12 @@ StringFileInfo(
   StringTable(
     u'040904B0',
     [StringStruct(u'CompanyName', u'18计科6班王鹏'), 
-    StringStruct(u'FileDescription', u'语音增强core调用工具'),    # 文件说明
+    StringStruct(u'FileDescription', u'语音增强客户端'),    # 文件说明
     StringStruct(u'FileVersion', u'0.0.1'),
     StringStruct(u'InternalName', u'SVN'),
     StringStruct(u'LegalCopyright', u'18计科6班王鹏版权所有'), #版权
-    StringStruct(u'OriginalFilename', u'pytorch_SEGAN_core.exe'), #原始文件名
-    StringStruct(u'ProductName', u'语音增强core调用工具'),      #产品名称
+    StringStruct(u'OriginalFilename', u'语音增强客户端.exe'), #原始文件名
+    StringStruct(u'ProductName', u'语音增强客户端'),      #产品名称
     StringStruct(u'ProductVersion', u'0.0.1')])    #产品版本
   ]),
 VarFileInfo([VarStruct(u'Translation', [2052, 1200])]) # 语言

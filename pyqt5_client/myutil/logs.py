@@ -13,7 +13,7 @@ class InterceptHandler(logging.Handler):
 
 def __init():
     # logging configuration
-    LOGGING_LEVEL = logging.DEBUG
+    LOGGING_LEVEL = logging.INFO
     logging.basicConfig(
         handlers=[InterceptHandler(level=LOGGING_LEVEL)], level=LOGGING_LEVEL
     )

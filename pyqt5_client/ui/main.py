@@ -137,7 +137,6 @@ class Ui_MainWindow(object):
         self.label_5.setObjectName("label_5")
         self.verticalLayout_2.addWidget(self.label_5)
         self.enh_wav_plt_label = QtWidgets.QLabel(self.centralwidget)
-        self.enh_wav_plt_label.setMinimumSize(QtCore.QSize(640, 480))
         self.enh_wav_plt_label.setText("")
         self.enh_wav_plt_label.setPixmap(QtGui.QPixmap(":/jpg/resources/jpg/plt_wav.jpg"))
         self.enh_wav_plt_label.setAlignment(QtCore.Qt.AlignCenter)
