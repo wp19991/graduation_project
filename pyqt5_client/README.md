@@ -11,6 +11,7 @@
     - 显示当前录音的大小状态（是否进行录音）
 
 - 进行处理
+    - 切换不同的处理
     - 选择模型
     - 进行处理的按钮
     - 显示处理的进度
@@ -39,31 +40,34 @@ conda activate bysj
 pip install pyqt5
 pip install pyqt5-tools
 
+# pytorch
+pip install torch==1.9.0+cpu torchvision==0.10.0+cpu torchaudio==0.9.0 -f https://download.pytorch.org/whl/torch_stable.html
+
 # 其他
+pip install librosa
+pip install soundfile
 pip install loguru
-pip install matplotlib numpy
+pip install matplotlib
+pip install numpy
 pip install pyaudio
 pip install scipy
+pip install pydub
+pip install pymysql
+pip install paramiko
 
 # 打包程序
 pip install pyinstaller
 
-# mysql
-pip install pymysql
-
-# ssh
-pip install paramiko
-
-
 ###
-pip install torch==1.9.0+cpu torchvision==0.10.0+cpu torchaudio==0.9.0 -f https://download.pytorch.org/whl/torch_stable.html
 
-pip install librosa soundfile
 ```
 
 ## Qt Designer 生成 py 文件
 
 ```bash
+# 转换资源文件
+# 运行bat文件bulid.bat，记得coda环境
+
 # 转换资源文件
 pyrcc5 apprcc.qrc -o apprcc_rc.py
 

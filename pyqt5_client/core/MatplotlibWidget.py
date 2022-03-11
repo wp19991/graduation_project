@@ -27,8 +27,8 @@ class MyMplCanvas(FigureCanvas):
 
     def __init__(self, parent=None, width=5, height=4, dpi=100):
         # 配置中文显示
-        plt.rcParams['font.family'] = ['SimHei']  # 用来正常显示中文标签
-        plt.rcParams['axes.unicode_minus'] = False  # 用来正常显示负号
+        # plt.rcParams['font.family'] = ['SimHei']  # 用来正常显示中文标签
+        # plt.rcParams['axes.unicode_minus'] = False  # 用来正常显示负号
 
         # 此处初始化子图一定要在初始化函数之前
         self.fig = plt.figure()
@@ -75,7 +75,7 @@ class MatplotlibWidget(QWidget):
 
     # 开始录制触发函数
     def start_audio(self, *args, **kwargs):
-        self.mpl.fig.suptitle('波形曲线')
+        #self.mpl.fig.suptitle('波形曲线')
         self.ani = animation.FuncAnimation(self.mpl.fig, self.plot_update,
                                            init_func=self.plot_init,
                                            frames=1,
@@ -148,9 +148,10 @@ class MatplotlibWidget(QWidget):
             logger.info("stream 出问题了，不过不影响")
 
     def endAudio(self, save_path=os.getcwd()):
+        plt.clf()
         # 停止获取音频信息,并保存
         wav_data = b"".join(self.data_list)
-        with wave.open(os.path.join(save_path, "aaa.wav"), "wb") as wf:
+        with wave.open(save_path, "wb") as wf:
             wf.setnchannels(CHANNELS)
             wf.setsampwidth(pyaudio.get_sample_size(pyaudio.paInt16))
             wf.setframerate(RATE)

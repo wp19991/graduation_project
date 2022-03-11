@@ -26,6 +26,7 @@
     <file>resources/icon/正确.ico</file>
   </qresource>
   <qresource prefix="jpg">
+    <file>resources/jpg/探测声音.png</file>
     <file>resources/jpg/plt_wav.jpg</file>
   </qresource>
 </RCC>

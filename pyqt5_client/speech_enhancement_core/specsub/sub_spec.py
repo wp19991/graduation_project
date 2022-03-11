@@ -2,7 +2,6 @@ import librosa
 import numpy as np
 import os
 import soundfile as sf
-import matplotlib.pyplot as plt
 
 
 class specsub:
@@ -55,37 +54,10 @@ class specsub:
         self.enhance = librosa.istft(S_enhance, hop_length=128, win_length=256)
         self.is_fit = True
 
-    def output_file(self, wav_file_output_path=os.getcwd(), name=None):
-        if name is None:
-            name = os.path.basename(self.noisy_wav_file_path) + "_sub_spec_enhance.wav"
-        opp = os.path.join(wav_file_output_path, name)
-        sf.write(opp, self.enhance, self.fs)
-        return name
+    def output_file(self, output_path=os.getcwd()):
+        # 增强文件保存
+        name = "noisy_sub_spec_enhance_" + os.path.basename(self.noisy_wav_file_path)
+        enh_wav_path = output_path + "/" + name
+        sf.write(enh_wav_path, self.enhance, self.fs)
 
-    def plt_save(self,output_path=os.getcwd()):
-        # 绘制噪音的谱图
-        plt.subplot(3, 1, 1)
-        plt.specgram(self.noisy, NFFT=512, Fs=16000)
-        plt.xlabel("before specgram")
-        plt.subplots_adjust(left=None, bottom=None, right=None, top=None,
-                            wspace=0, hspace=0.8)
-
-        plt.subplot(3, 1, 2)
-        plt.specgram(self.noisy - self.enhance, NFFT=512, Fs=16000)
-        plt.xlabel("background noisy specgram")
-        plt.subplots_adjust(left=None, bottom=None, right=None, top=None,
-                            wspace=0, hspace=0.8)
-
-        plt.subplot(3, 1, 3)
-        plt.specgram(self.enhance, NFFT=512, Fs=16000)
-        plt.xlabel("enhece after specgram")
-        opp = os.path.join(output_path,
-                           "noisy_sub_spec_specgram_" + os.path.basename(self.noisy_wav_file_path) + ".png")
-        plt.savefig(opp)
-
-
-if __name__ == "__main__":
-    a = specsub(noisy_wav_file_path=r"C:\Users\wp\Desktop\graduation_project\specsub\noise_wav\speech-us-gov-0000.wav")
-    a.fit()
-    a.plt_save(output_path=r"C:\Users\wp\Desktop\graduation_project\output")
-    a.output_file(wav_file_output_path=r"C:\Users\wp\Desktop\graduation_project\output")
+        return enh_wav_path

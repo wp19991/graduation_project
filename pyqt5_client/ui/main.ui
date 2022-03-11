@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1284</width>
-    <height>608</height>
+    <width>652</width>
+    <height>548</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,7 +18,7 @@
     <normaloff>:/icon/resources/icon/探测声音.ico</normaloff>:/icon/resources/icon/探测声音.ico</iconset>
   </property>
   <property name="toolTip">
-   <string>打开一个项目文件夹</string>
+   <string/>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QHBoxLayout" name="horizontalLayout_3">
@@ -59,7 +59,43 @@
       </item>
       <item>
        <layout class="QGridLayout" name="gridLayout">
-        <item row="1" column="0">
+        <item row="0" column="1">
+         <widget class="QComboBox" name="choose_model_comboBox">
+          <property name="cursor">
+           <cursorShape>PointingHandCursor</cursorShape>
+          </property>
+          <property name="toolTip">
+           <string>选择语音增强的模式</string>
+          </property>
+          <property name="currentIndex">
+           <number>0</number>
+          </property>
+          <item>
+           <property name="text">
+            <string>深度神经网络_SEGAN</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>维纳滤波_spec_sub</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="1" column="2">
+         <widget class="QPushButton" name="save_model_file_path_pushButton">
+          <property name="cursor">
+           <cursorShape>PointingHandCursor</cursorShape>
+          </property>
+          <property name="toolTip">
+           <string>选择模型文件</string>
+          </property>
+          <property name="text">
+           <string>打开</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
          <widget class="QLabel" name="label_3">
           <property name="text">
            <string>选择需要增强的
@@ -70,7 +106,7 @@
           </property>
          </widget>
         </item>
-        <item row="0" column="0">
+        <item row="1" column="0">
          <widget class="QLabel" name="label">
           <property name="text">
            <string>选择模型文件</string>
@@ -80,35 +116,98 @@
           </property>
          </widget>
         </item>
-        <item row="0" column="2">
-         <widget class="QPushButton" name="save_model_file_path_pushButton">
-          <property name="cursor">
-           <cursorShape>PointingHandCursor</cursorShape>
-          </property>
-          <property name="text">
-           <string>打开</string>
-          </property>
-         </widget>
-        </item>
-        <item row="4" column="0">
-         <widget class="QLabel" name="label_4">
-          <property name="text">
-           <string>运行状态</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-        </item>
-        <item row="2" column="1">
+        <item row="3" column="1">
          <widget class="QLineEdit" name="save_path_lineEdit">
           <property name="readOnly">
            <bool>true</bool>
           </property>
          </widget>
         </item>
+        <item row="2" column="2">
+         <widget class="QPushButton" name="need_enh_wav_file_path_pushButton">
+          <property name="cursor">
+           <cursorShape>PointingHandCursor</cursorShape>
+          </property>
+          <property name="toolTip">
+           <string>选择需要增强的语音文件</string>
+          </property>
+          <property name="text">
+           <string>打开</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QLineEdit" name="need_enh_wav_file_path_lineEdit">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="2">
+         <widget class="QPushButton" name="save_path_pushButton">
+          <property name="cursor">
+           <cursorShape>PointingHandCursor</cursorShape>
+          </property>
+          <property name="toolTip">
+           <string>设置保存语音，以及后面画图的路径</string>
+          </property>
+          <property name="text">
+           <string>打开</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QLineEdit" name="save_model_file_path_lineEdit">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QLabel" name="label_7">
+          <property name="text">
+           <string>选择增强模式</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QLabel" name="label_6">
+          <property name="text">
+           <string>设置文件
+保存的路径</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
         <item row="4" column="1">
+         <widget class="QPushButton" name="enh_pushButton">
+          <property name="cursor">
+           <cursorShape>PointingHandCursor</cursorShape>
+          </property>
+          <property name="toolTip">
+           <string>调用模型对语音进行增强</string>
+          </property>
+          <property name="text">
+           <string>调用模型文件对语音进行增强</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="1">
          <widget class="QProgressBar" name="enh_progressBar">
+          <property name="toolTip">
+           <string>语音增强的进度条</string>
+          </property>
           <property name="value">
            <number>14</number>
           </property>
@@ -123,61 +222,13 @@
           </property>
          </widget>
         </item>
-        <item row="1" column="2">
-         <widget class="QPushButton" name="need_enh_wav_file_path_pushButton">
-          <property name="cursor">
-           <cursorShape>PointingHandCursor</cursorShape>
-          </property>
+        <item row="5" column="0">
+         <widget class="QLabel" name="label_4">
           <property name="text">
-           <string>打开</string>
-          </property>
-         </widget>
-        </item>
-        <item row="2" column="0">
-         <widget class="QLabel" name="label_6">
-          <property name="text">
-           <string>设置文件
-保存的路径</string>
+           <string>运行状态</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="1">
-         <widget class="QLineEdit" name="need_enh_wav_file_path_lineEdit">
-          <property name="enabled">
-           <bool>true</bool>
-          </property>
-          <property name="readOnly">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </item>
-        <item row="2" column="2">
-         <widget class="QPushButton" name="save_path_pushButton">
-          <property name="cursor">
-           <cursorShape>PointingHandCursor</cursorShape>
-          </property>
-          <property name="text">
-           <string>打开</string>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="1">
-         <widget class="QLineEdit" name="save_model_file_path_lineEdit">
-          <property name="enabled">
-           <bool>true</bool>
-          </property>
-          <property name="readOnly">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </item>
-        <item row="3" column="1">
-         <widget class="QPushButton" name="enh_pushButton">
-          <property name="text">
-           <string>调用模型文件对语音进行增强</string>
           </property>
          </widget>
         </item>
@@ -200,6 +251,12 @@
         </item>
         <item>
          <widget class="QPushButton" name="update_data_pushButton">
+          <property name="cursor">
+           <cursorShape>PointingHandCursor</cursorShape>
+          </property>
+          <property name="toolTip">
+           <string>更新训练的结果，并展示图像</string>
+          </property>
           <property name="text">
            <string>更新训练结束的数据</string>
           </property>
@@ -222,6 +279,9 @@
       </item>
       <item>
        <widget class="QLabel" name="enh_show_data_label">
+        <property name="toolTip">
+         <string>文件的存储路径</string>
+        </property>
         <property name="text">
          <string>输出的一些数据</string>
         </property>
@@ -263,6 +323,9 @@
           <property name="cursor">
            <cursorShape>PointingHandCursor</cursorShape>
           </property>
+          <property name="toolTip">
+           <string>播放原始文件</string>
+          </property>
           <property name="layoutDirection">
            <enum>Qt::LeftToRight</enum>
           </property>
@@ -296,6 +359,9 @@
          <widget class="QPushButton" name="paly_enh_wav_file_pushButton">
           <property name="cursor">
            <cursorShape>PointingHandCursor</cursorShape>
+          </property>
+          <property name="toolTip">
+           <string>播放增强后的文件</string>
           </property>
           <property name="text">
            <string>  播放
@@ -354,22 +420,9 @@
        </spacer>
       </item>
       <item>
-       <widget class="QLabel" name="label_5">
-        <property name="text">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:18pt; font-weight:600;&quot;&gt;声音频谱&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item>
        <widget class="QLabel" name="enh_wav_plt_label">
         <property name="text">
          <string/>
-        </property>
-        <property name="pixmap">
-         <pixmap resource="../apprcc.qrc">:/jpg/resources/jpg/plt_wav.jpg</pixmap>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>
@@ -398,7 +451,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1284</width>
+     <width>652</width>
      <height>26</height>
     </rect>
    </property>
@@ -431,6 +484,12 @@
    <addaction name="menu_2"/>
   </widget>
   <action name="action_open_project">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="icon">
     <iconset resource="../apprcc.qrc">
      <normaloff>:/icon/resources/icon/文件夹 .ico</normaloff>:/icon/resources/icon/文件夹 .ico</iconset>
@@ -443,6 +502,9 @@
    </property>
   </action>
   <action name="action_close_project">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="icon">
     <iconset resource="../apprcc.qrc">
      <normaloff>:/icon/resources/icon/关闭文件夹.ico</normaloff>:/icon/resources/icon/关闭文件夹.ico</iconset>
@@ -461,6 +523,9 @@
    </property>
   </action>
   <action name="action_save">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="icon">
     <iconset resource="../apprcc.qrc">
      <normaloff>:/icon/resources/icon/保存.ico</normaloff>:/icon/resources/icon/保存.ico</iconset>
@@ -479,6 +544,9 @@
    </property>
   </action>
   <action name="action_help">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="icon">
     <iconset resource="../apprcc.qrc">
      <normaloff>:/icon/resources/icon/帮助.ico</normaloff>:/icon/resources/icon/帮助.ico</iconset>

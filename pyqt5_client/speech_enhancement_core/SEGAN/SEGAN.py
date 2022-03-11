@@ -12,13 +12,8 @@ import numpy as np
 
 import soundfile as sf
 
-import matplotlib
-matplotlib.use("Qt5Agg")
-import matplotlib.pyplot as plt
 
 class Generator(nn.Module):
-    """G"""
-
     def __init__(self):
         super().__init__()
         # encoder gets a noisy signal as input [B x 1 x 16384]
@@ -145,7 +140,6 @@ def emphasis(signal, emph_coeff=0.95, pre=True):
 
 def enh_segan(model, noisy):
     # 对输入的noisy 按照 win_len 进行分段，没有重叠
-
     win_len = 16384
     # 不足的部分 重复填充
     N_slice = len(noisy) // win_len
@@ -188,54 +182,18 @@ def enh_segan(model, noisy):
     return enh_speech[:len(noisy)]
 
 
-def get_and_save_enh(model_file, noisy_file, save_path):
-    os.makedirs(save_path, exist_ok=True)
+def get_and_save_enh(model_file, noisy_file, output_path=os.getcwd()):
+    os.makedirs(output_path, exist_ok=True)
     generator = Generator()
     generator.load_state_dict(load(model_file, map_location='cpu'))
     noisy, _ = librosa_load(noisy_file, sr=16000, mono=True)
 
-    # noisy, sr = sf.read(noisy_file_path,dtype=np.float32)
-
     # 获取增强语音
     enh = enh_segan(generator, noisy)
 
-    # 语音保存
-    sf.write(os.path.join(save_path, 'noisy-' + os.path.split(noisy_file)[-1]), noisy, 16000)
-    sf.write(os.path.join(save_path, 'enh-' + os.path.split(noisy_file)[-1]), enh, 16000)
+    name = "noisy_SEGAN_enhance_" + os.path.basename(noisy_file)
+    enh_wav_path = output_path + "/" + name
+    sf.write(enh_wav_path, enh, 16000)
 
-    # 画频谱图
-    # 绘图
-    fig_name = os.path.join(save_path, os.path.split(noisy_file)[-1][:-4] + '.jpg')
+    return enh_wav_path
 
-    # 其中各个参数也可以用逗号,分隔开。第一个参数代表子图的行数；第二个参数代表该行图像的列数； 第三个参数代表每行的第几个图像。
-    # 2代表行，1代表列，所以一共有2个图，1代表此时绘制第二个图。其中ax1是为了坐标轴主次刻度大小的设置
-    plt.subplot(3, 1, 1)
-    plt.specgram(noisy, NFFT=512, Fs=16000)
-    plt.xlabel("before specgram")
-    plt.subplots_adjust(left=None, bottom=None, right=None, top=None,
-                        wspace=0, hspace=0.8)
-
-    plt.subplot(3, 1, 2)
-    plt.specgram(noisy-enh, NFFT=512, Fs=16000)
-    plt.xlabel("background noisy specgram")
-    plt.subplots_adjust(left=None, bottom=None, right=None, top=None,
-                        wspace=0, hspace=0.8)
-
-    plt.subplot(3, 1, 3)
-    plt.specgram(enh, NFFT=512, Fs=16000)
-    plt.xlabel("enhece after specgram")
-    plt.savefig(fig_name)
-
-    plt.close()
-
-
-# import getopt
-# import sys
-#
-# if __name__ == "__main__":
-#     opts, args = getopt.gnu_getopt(sys.argv[1:], 'm:n:s', ['model_file=', 'noisy_file=', 'save_path='])
-#     model_file = "./model.pkl"
-#     noisy_file = './p232_010.wav'
-#     save_path = "ssss"
-#
-#     get_and_save_enh(model_file, noisy_file, save_path)

@@ -19,7 +19,7 @@ class Ui_Frame(object):
         icon.addPixmap(QtGui.QPixmap(":/icon/resources/icon/帮助.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         Frame.setWindowIcon(icon)
         self.label = QtWidgets.QLabel(Frame)
-        self.label.setGeometry(QtCore.QRect(150, 90, 72, 15))
+        self.label.setGeometry(QtCore.QRect(30, 20, 72, 15))
         self.label.setObjectName("label")
 
         self.retranslateUi(Frame)

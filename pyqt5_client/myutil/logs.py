@@ -1,7 +1,8 @@
 import logging
 import sys
 from loguru import logger
-
+import matplotlib.pyplot as plt
+plt.set_loglevel('WARNING')
 
 # 日志模块
 
