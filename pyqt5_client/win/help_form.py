@@ -1,6 +1,4 @@
-from PyQt5.QtWidgets import *
-import os
-from loguru import logger
+from PyQt5.QtWidgets import QWidget
 from ui.help_frame import Ui_Frame as help_frame
 
 

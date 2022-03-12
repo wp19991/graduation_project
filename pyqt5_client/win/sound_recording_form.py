@@ -1,6 +1,7 @@
 import datetime
 
-from PyQt5.QtWidgets import *
+# from PyQt5.QtWidgets import *
+from PyQt5.QtWidgets import QWidget, QFileDialog
 import os
 from loguru import logger
 from ui.sound_recording_frame import Ui_Frame as sound_recording_frame

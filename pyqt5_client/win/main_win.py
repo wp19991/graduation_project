@@ -128,7 +128,7 @@ class main_win(QMainWindow, main_window):
         self.main_data = None
 
         # 几个QWidgets
-        self.figure = plt.figure()  # 可选参数,facecolor为背景颜色
+        self.figure = plt.figure()
         self.canvas = FigureCanvas(self.figure)
 
         # 开始隐藏窗口
@@ -237,6 +237,7 @@ class main_win(QMainWindow, main_window):
         fig_name = self.main_data.save_path + "/" + name
         # print(fig_name)
         # 设置标题
+        plt.clf()
         plt.title(name)
 
         plt.subplot(2, 1, 1)
@@ -272,6 +273,10 @@ class main_win(QMainWindow, main_window):
         self.main_data.plt_save_path = fig_name
 
     def choose_model_comboBox_event(self):
+        self.enh_wav_plt_label.hide()
+        self.update_data_pushButton.setEnabled(False)
+        self.paly_wav_file_pushButton.setEnabled(False)
+        self.paly_enh_wav_file_pushButton.setEnabled(False)
         if self.choose_model_comboBox.currentText() == "维纳滤波_spec_sub":
             self.main_data = main_data("维纳滤波_spec_sub")
             self.need_enh_wav_file_path_lineEdit.setText("")
@@ -290,7 +295,8 @@ class main_win(QMainWindow, main_window):
 
     def save_model_file_path_event(self):
         logger.info("选择模型文件按钮设置")
-        filePath = QFileDialog.getOpenFileName(self, "请选择要添加的文件", os.path.join(os.path.expanduser("~"), 'Desktop'), "pkl Files (*.pkl);;All Files (*)")
+        filePath = QFileDialog.getOpenFileName(self, "请选择要添加的文件", os.path.join(os.path.expanduser("~"), 'Desktop'),
+                                               "pkl Files (*.pkl);;All Files (*)")
         if filePath == "":
             logger.error("请选择路径")
             return
@@ -299,7 +305,8 @@ class main_win(QMainWindow, main_window):
 
     def need_enh_wav_file_path_event(self):
         logger.info("选择需要增强的语音文件按钮设置")
-        filePath = QFileDialog.getOpenFileName(self, "请选择要添加的文件", os.path.join(os.path.expanduser("~"), 'Desktop'), "wav Files (*.wav);;All Files (*)")
+        filePath = QFileDialog.getOpenFileName(self, "请选择要添加的文件", os.path.join(os.path.expanduser("~"), 'Desktop'),
+                                               "wav Files (*.wav);;All Files (*)")
         if filePath == "":
             logger.error("请选择路径")
             return
@@ -321,6 +328,7 @@ class main_win(QMainWindow, main_window):
             f.close()
 
             self.need_enh_wav_file_path_lineEdit.setText(filePath[0] + ".wav")
+            self.main_data.noisy_wav_path = filePath[0] + ".wav"
             return
         logger.info("need_enh_wav_file_path=" + filePath[0])
         self.need_enh_wav_file_path_lineEdit.setText(filePath[0])
@@ -344,7 +352,10 @@ class main_win(QMainWindow, main_window):
 
         # 将噪音文件复制到保存的目录下面
         # 将指定的文件file复制到file_dir的文件夹里面
-        shutil.copy(self.main_data.noisy_wav_path, self.main_data.save_path)
+        if os.path.split(self.main_data.noisy_wav_path)[0] != self.main_data.save_path:
+            shutil.copy(self.main_data.noisy_wav_path, self.main_data.save_path)
+        else:
+            logger.info("文件已经存放在当前保存目录，不需要再进行移动")
 
         if self.main_data.now_model == self.main_data.model["维纳滤波_spec_sub"]:
             # 设置路径
@@ -374,6 +385,8 @@ class main_win(QMainWindow, main_window):
                                    need_enh_wav_file_path=self.main_data.noisy_wav_path,
                                    save_path=self.main_data.save_path)
         self.update_data_pushButton.setEnabled(True)
+        self.paly_wav_file_pushButton.setEnabled(True)
+        self.paly_enh_wav_file_pushButton.setEnabled(True)
 
     def change_jdt(self, num):
         self.enh_progressBar.setValue(num)
@@ -383,7 +396,7 @@ class main_win(QMainWindow, main_window):
         self.plt_save()
 
         self.enh_show_data_label.setText("增强文件保存在：{}".format(self.main_data.save_path))
-        jpg = QPixmap(self.main_data.plt_save_path)#.scaled(640, 480)
+        jpg = QPixmap(self.main_data.plt_save_path)  # .scaled(640, 480)
         self.enh_wav_plt_label.show()
         self.enh_wav_plt_label.setPixmap(jpg)
 

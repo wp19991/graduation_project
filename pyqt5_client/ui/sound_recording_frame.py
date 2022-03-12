@@ -30,6 +30,7 @@ class Ui_Frame(object):
         self.sound_recording_save_path_pushButton.setObjectName("sound_recording_save_path_pushButton")
         self.gridLayout.addWidget(self.sound_recording_save_path_pushButton, 0, 2, 1, 1)
         self.sound_recording_save_path_lineEdit = QtWidgets.QLineEdit(Frame)
+        self.sound_recording_save_path_lineEdit.setReadOnly(True)
         self.sound_recording_save_path_lineEdit.setObjectName("sound_recording_save_path_lineEdit")
         self.gridLayout.addWidget(self.sound_recording_save_path_lineEdit, 0, 1, 1, 1)
         self.label_2 = QtWidgets.QLabel(Frame)

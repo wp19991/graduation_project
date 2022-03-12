@@ -251,6 +251,9 @@
         </item>
         <item>
          <widget class="QPushButton" name="update_data_pushButton">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
           <property name="cursor">
            <cursorShape>PointingHandCursor</cursorShape>
           </property>
@@ -320,6 +323,9 @@
         </item>
         <item>
          <widget class="QPushButton" name="paly_wav_file_pushButton">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
           <property name="cursor">
            <cursorShape>PointingHandCursor</cursorShape>
           </property>
@@ -357,6 +363,9 @@
         </item>
         <item>
          <widget class="QPushButton" name="paly_enh_wav_file_pushButton">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
           <property name="cursor">
            <cursorShape>PointingHandCursor</cursorShape>
           </property>

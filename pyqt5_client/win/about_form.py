@@ -1,6 +1,6 @@
 from PyQt5 import QtGui, QtCore
 from PyQt5.QtCore import pyqtSignal, QThread
-from PyQt5.QtWidgets import *
+from PyQt5.QtWidgets import QWidget
 from loguru import logger
 from ui.about_frame import Ui_Frame as about_frame
 import requests
